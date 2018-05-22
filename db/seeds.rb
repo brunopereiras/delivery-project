@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 UserType.create([
-    { name: 'Empresa' },
+    { name: 'Cliente' },
     { name: 'Estabelecimento' },
-    { name: 'Cliente' }
+    { name: 'Empresa' }
 ])
