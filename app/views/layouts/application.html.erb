@@ -9,6 +9,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <br>
+      <div class="menu">
+        <%= link_to 'Home', root_path %> |
+        <%= link_to 'User type', user_types_path %>
+      </div>
+
+      <%= yield %>
+    </div>
   </body>
 </html>
