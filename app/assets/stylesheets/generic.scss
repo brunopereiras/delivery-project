@@ -92,3 +92,10 @@ input[type=submit] {
   margin: 0 auto;
   clear: both;
 }
+
+.field_with_errors {
+
+  input[type=text],input[type=password],textarea {
+    border: 1px solid #ff0000;
+  }
+}

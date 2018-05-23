@@ -1,9 +1,11 @@
 class UserType < ApplicationRecord
 
-    validates :name, presence: true
+  has_many :users
 
-    def destroy
-        self.update_attribute(:active, false)
-    end
+  validates :name, presence: true
+
+  def destroy
+    self.update_attribute(:active, false)
+  end
 
 end
