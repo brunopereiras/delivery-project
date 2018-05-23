@@ -15,5 +15,11 @@ test:
   database: delivery_project_test
 
 production:
-  <<: *default
-  database: delivery_project_production
+  host: ec2-54-243-213-188.compute-1.amazonaws.com
+  database: d8ouno3mki60ej
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  port: 5432
+  username: rcmzjuwcusraix
+  password: 3643b9e0dccccd4e7c2b01270f0fff41fdcc222a872c29b24010c4ceab186d7e
