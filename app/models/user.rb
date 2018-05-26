@@ -11,14 +11,21 @@ class User < ApplicationRecord
   validates :name, length: { in: 3..200 }
   validate :email_format
 
-  validates :password, on: :create, length: { in: 3..200 }, confirmation: { case_sensitive: true }
-  validates :password, on: :update, length: { in: 3..200 }, confirmation: { case_sensitive: true }, allow_blank: true
+  validates :password, length: { in: 3..200 }, if: :should_validate_password?
 
   def destroy
     self.update_attribute(:active, false)
   end
 
 	private
+
+    def should_validate_password?
+      if new_record?
+        true
+      else
+        password.present? || password_confirmation.present?
+      end
+    end
 
     def email_format
       errors.add(:email, :invalid) unless email.match(EMAIL_REGEXP)
