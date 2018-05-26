@@ -1,0 +1,21 @@
+<h1>Login</h1>
+
+<%= form_for(:session, url: login_path) do |form| %>
+
+  <p id="notice"><%= flash[:session_error] %></p>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Log in" %>
+  </div>
+
+<% end %>

@@ -12,9 +12,19 @@
     <div class="container">
       <br>
       <div class="menu">
-        <%= link_to 'Home', root_path %> |
-        <%= link_to 'User type', user_types_path %> |
-        <%= link_to 'User', users_path %>
+
+        <% if current_user %>
+          <%= link_to 'Home', root_path %> |
+          <%= link_to 'User type', user_types_path %> |
+          <%= link_to 'User', users_path %> |
+
+          <%= link_to current_user.name, current_user %> |
+          <%= link_to 'Logout', logout_path, method: :delete %>
+        <% else %>
+          <%= link_to 'Login', login_path %> or
+          <%= link_to 'Sign up', new_user_path %>
+        <% end %>
+
       </div>
 
       <%= yield %>
