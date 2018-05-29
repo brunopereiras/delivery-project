@@ -13,8 +13,10 @@
       <br>
       <div class="menu">
 
+        <%= link_to 'Home', hotsite_index_path %> |
+        <%= link_to 'About', hotsite_about_path %> |
+
         <% if current_user %>
-          <%= link_to 'Home', root_path %> |
           <%= link_to 'User type', user_types_path %> |
           <%= link_to 'User', users_path %> |
 
