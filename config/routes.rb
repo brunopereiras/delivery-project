@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :establishments
   root "hotsite#index"
   
   get '/login', to: 'user_session#new'

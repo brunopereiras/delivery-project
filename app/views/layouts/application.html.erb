@@ -19,6 +19,7 @@
         <% if current_user %>
           <%= link_to 'User type', user_types_path %> |
           <%= link_to 'User', users_path %> |
+          <%= link_to 'Establishments', establishments_path %> |
 
           <%= link_to current_user.name, current_user %> |
           <%= link_to 'Logout', logout_path, method: :delete %>
