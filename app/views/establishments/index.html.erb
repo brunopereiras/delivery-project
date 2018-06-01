@@ -15,7 +15,7 @@
   <tbody>
     <% @establishments.each do |establishment| %>
       <tr>
-        <td><%= establishment.user %></td>
+        <td><%= establishment.user.name %></td>
         <td><%= establishment.name %></td>
         <td><%= establishment.link_name %></td>
         <td><%= link_to 'Show', establishment %></td>

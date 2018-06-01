@@ -1,10 +1,12 @@
 class EstablishmentsController < ApplicationController
   before_action :set_establishment, only: [:show, :edit, :update, :destroy]
 
+  include UserSessionHelper
+
   # GET /establishments
   # GET /establishments.json
   def index
-    @establishments = Establishment.all
+    @establishments = current_user.establishments
   end
 
   # GET /establishments/1
@@ -25,6 +27,10 @@ class EstablishmentsController < ApplicationController
   # POST /establishments.json
   def create
     @establishment = Establishment.new(establishment_params)
+
+    if !@establishment.user
+      @establishment.user = current_user
+    end
 
     respond_to do |format|
       if @establishment.save
@@ -64,11 +70,11 @@ class EstablishmentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_establishment
-      @establishment = Establishment.find(params[:id])
+      @establishment = Establishment.where('id = ? and user_id = ?', params[:id], current_user.id).take
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def establishment_params
-      params.require(:establishment).permit(:user_id, :name, :link_name)
+      params.require(:establishment).permit(:name)
     end
 end
