@@ -1,0 +1,74 @@
+/* Colors */
+
+$black: #252525;
+$white: #ffffff;
+$yellow: #F1C40F;
+$light-yellow: #F9E79F;
+$dark-yellow: #7D6608;
+
+/* Sizes */
+
+$menu-height: 70px;
+$pede_pizza_menu-height: 40px;
+
+#pede_pizza_menu {
+  height: $pede_pizza_menu-height;
+  width: 100%;
+  clear: both;
+  background-color: $black;
+
+  a {
+    display: inline-block;
+    line-height: $pede_pizza_menu-height;
+    color: $white;
+
+    &:hover {
+      text-decoration: none;
+      color: $yellow;
+    }
+  }
+
+  .logo {
+    font-weight: 700;
+  }
+
+  .menu-button {
+    float: right;
+  }
+}
+
+#menu {
+  height: $menu-height;
+  width: 100%;
+  clear: both;
+  background-color: $yellow;
+  color: $black;
+  text-align: center;
+  font-size: 14px;
+
+  a {
+    position: relative;
+    display: inline-block;
+    height: $menu-height;
+    width: 30%;
+    text-align: center;
+    color: $black;
+    font-weight: 700;
+
+    i {
+      display: block;
+      margin-bottom: 5px;
+      padding-top: 10px;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: $dark-yellow;
+    }
+
+    &.selected {
+      color: $dark-yellow;
+    }
+  }
+}
+
