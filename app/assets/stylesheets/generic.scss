@@ -1,16 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|PT+Sans+Narrow:400,700');
+@import 'mixins';
 
 body {
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 20px;
-  letter-spacing: 4px;
   font-weight: 400;
-  line-height: 20px;
-  color: #333333;
+  line-height: 30px;
+  color: $black;
 }
 
 h1,h2,h3,h4,h5,h6 {
   font-weight: 700;
+  font-family: 'PT Sans Narrow', sans-serif;
+  letter-spacing: 4px;
+  line-height: 110%;
 }
 
 h1 { font-size: 48px; }
@@ -26,16 +29,18 @@ b,strong {
 
 a {
   text-decoration: none;
-  color: #1072C6;
+  color: $yellow;
+  font-family: 'PT Sans Narrow', sans-serif;
+  letter-spacing: 4px;
 
   &:hover {
-    text-decoration: underline;
+    color: $dark-yellow;
   }
 }
 
 table {
   width: 100%;
-  border: 1px solid #dddddd;
+  border: 1px solid $light-gray;
   text-align: left;
   border-collapse: collapse;
 
@@ -44,7 +49,7 @@ table {
   }
 
   th,td {
-    border: 1px solid #dddddd;
+    border: 1px solid $light-gray;
     padding: 5px;
   }
 }
@@ -54,30 +59,30 @@ input[type=text],input[type=password],textarea {
   padding: 10px;
   margin: 8px 0;
   box-sizing: border-box;
-  border: 1px solid #dddddd;
+  border: 2px solid $light-gray;
   font-family: 'Open Sans', sans-serif;
   font-size: 17px;
   font-weight: 400;
-  color: #333333;
+  color: $black;
 
   &:focus {
-    border: 1px solid #333333;
+    border: 2px solid $black;
     outline: none;
   }
 }
 
 input[type=submit] {
   background-color: transparent;
-  color: #1072C6;
+  color: $black;
   padding: 10px 15px;
-  border: 1px solid #1072C6;
-  border-radius: 3px;
+  border: 2px solid $black;
   margin: 8px 0;
 
-  &:hover {
-    color: #333333;
-    border: 1px solid #333333;
+  &:hover,&:focus {
+    color: $dark-yellow;
+    border: 2px solid $dark-yellow;
     cursor: pointer;
+    outline: none;
   }
 }
 

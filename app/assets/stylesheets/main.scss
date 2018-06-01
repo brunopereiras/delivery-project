@@ -1,10 +1,4 @@
-/* Colors */
-
-$black: #252525;
-$white: #ffffff;
-$yellow: #F1C40F;
-$light-yellow: #F9E79F;
-$dark-yellow: #7D6608;
+@import 'mixins';
 
 /* Sizes */
 
@@ -72,3 +66,12 @@ $pede_pizza_menu-height: 40px;
   }
 }
 
+#footer {
+  width: 100%;
+  clear: both;
+  background: $gray;
+  color: $black;
+  padding: 30px 0;
+  margin-top: 50px;
+  text-align: center;
+}
