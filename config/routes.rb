@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :product_categories
   resources :establishments
   root "hotsite#index"
   

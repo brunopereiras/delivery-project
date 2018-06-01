@@ -1,6 +1,7 @@
 class Establishment < ApplicationRecord
 
   belongs_to :user
+  has_many :product_categories
 
   validates :name, length: { in: 3..200 }
 
