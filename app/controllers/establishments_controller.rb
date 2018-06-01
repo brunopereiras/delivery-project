@@ -27,10 +27,7 @@ class EstablishmentsController < ApplicationController
   # POST /establishments.json
   def create
     @establishment = Establishment.new(establishment_params)
-
-    if !@establishment.user
-      @establishment.user = current_user
-    end
+    @establishment.user = current_user
 
     respond_to do |format|
       if @establishment.save
