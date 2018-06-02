@@ -1,0 +1,28 @@
+<br>
+<h2>Meus estabelecimentos</h2>
+
+<% if establishments.count > 0 %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% establishments.each do |establishment| %>
+        <tr>
+          <td><%= link_to establishment.name, establishment %></td>
+          <td class="center"><%= link_to raw('<i class="fas fa-edit"></i>'), edit_establishment_path(establishment) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% else %>
+
+  <p>Você ainda não têm nenhum estabelecimento cadastrado, <%= link_to 'aqui', new_establishment_path %> para criar um.</p>
+
+<% end %>

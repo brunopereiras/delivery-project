@@ -4,3 +4,7 @@
 
 <h2>Informações pessoais <%= link_to raw('<i class="fas fa-edit fa-xs"></i>'), edit_user_path(@user) %></h2>
 <p><b>Email: </b><%= @user.email %></p>
+
+<% if @user.is_establishment? %>
+  <%= render 'user_establishments', establishments: @user.establishments %>
+<% end %>
