@@ -1,29 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User type:</strong>
-  <%= @user.user_type.name %>
-</p>
+<h1><%= @user.name %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
-
-<p>
-  <strong>Active:</strong>
-  <%= @user.active %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<h2>Informações pessoais <%= link_to raw('<i class="fas fa-edit fa-xs"></i>'), edit_user_path(@user) %></h2>
+<p><b>Email: </b><%= @user.email %></p>
