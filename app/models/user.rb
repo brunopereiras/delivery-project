@@ -30,6 +30,10 @@ class User < ApplicationRecord
     self.user_type.name == 'Estabelecimento'
   end
 
+  def first_name
+    self.name.split(' ').first
+  end
+
 	private
 
     def should_validate_password?
