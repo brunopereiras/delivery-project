@@ -1,6 +1,7 @@
 class UserSessionController < ApplicationController
 
   def new
+    @should_show_pede_pizza_menu = true
   end
 
   def create

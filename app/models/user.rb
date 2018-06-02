@@ -18,6 +18,18 @@ class User < ApplicationRecord
     self.update_attribute(:active, false)
   end
 
+  def is_admin?
+    self.user_type.name == 'Administrador'
+  end
+
+  def is_client?
+    self.user_type.name == 'Cliente'
+  end
+
+  def is_establishment?
+    self.user_type.name == 'Estabelecimento'
+  end
+
 	private
 
     def should_validate_password?

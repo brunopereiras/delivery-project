@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :user_logged_in?, only: [:index, :show, :edit, :update, :destroy]
+  before_action :user_is_admin?, only: [:index]
+
+  before_action :show_pede_pizza_menu
 
   # GET /users
   # GET /users.json
@@ -64,11 +68,15 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      @user = current_user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+
+    def show_pede_pizza_menu
+      @should_show_pede_pizza_menu = true
     end
 end
