@@ -1,10 +1,12 @@
 class EstablishmentsController < ApplicationController
   before_action :set_establishment, only: [:show, :edit, :update, :destroy]
+  before_action :user_logged_in?, only: [:index, :new, :create, :edit, :update, :destroy]
 
-  include UserSessionHelper
+  before_action :show_pede_pizza_menu, if: :user_is_establishment?
+  before_action :show_menu, only: [:show]
 
   # GET /establishments
-  # GET /establishments.json
+  # GET /
   def index
     @establishments = current_user.establishments
   end

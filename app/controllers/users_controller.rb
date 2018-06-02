@@ -76,7 +76,4 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
-    def show_pede_pizza_menu
-      @should_show_pede_pizza_menu = true
-    end
 end
