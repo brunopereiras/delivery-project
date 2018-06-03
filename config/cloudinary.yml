@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: pedepizza
+  api_key: '819977539961261'
+  api_secret: 07OE53HDxSQv3RzhlH6d2na7p70
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: pedepizza
+  api_key: '819977539961261'
+  api_secret: 07OE53HDxSQv3RzhlH6d2na7p70
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: pedepizza
+  api_key: '819977539961261'
+  api_secret: 07OE53HDxSQv3RzhlH6d2na7p70
+  enhance_image_tag: true
+  static_image_support: false

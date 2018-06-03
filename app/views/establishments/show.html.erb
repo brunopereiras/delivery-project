@@ -1,19 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div id="establishment">
+  <div id="image_header">
+  </div>
 
-<p>
-  <strong>User:</strong>
-  <%= @establishment.user.name %>
-</p>
+  <div class="container">
 
-<p>
-  <strong>Name:</strong>
-  <%= @establishment.name %>
-</p>
+    <div class="logo" style="background-image: url(http://res.cloudinary.com/pedepizza/image/upload/q_auto,f_auto/v1527959814/Pizza%20logos%20example/pizza_mane.png);"></div>
 
-<p>
-  <strong>Link name:</strong>
-  <%= @establishment.link_name %>
-</p>
+    <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_establishment_path(@establishment) %> |
-<%= link_to 'Back', establishments_path %>
+    <p>
+      <strong>User:</strong>
+      <%= @establishment.user.name %>
+    </p>
+
+    <p>
+      <strong>Name:</strong>
+      <%= @establishment.name %>
+    </p>
+
+    <p>
+      <strong>Link name:</strong>
+      <%= @establishment.link_name %>
+    </p>
+
+    <%= link_to 'Edit', edit_establishment_path(@establishment) %> |
+    <%= link_to 'Back', establishments_path %>
+  </div>
+</div>

@@ -5,66 +5,79 @@
 $menu-height: 70px;
 $pede_pizza_menu-height: 40px;
 
-#pede_pizza_menu {
-  height: $pede_pizza_menu-height;
+#menus {
+  position: fixed;
+  z-index: 100;
   width: 100%;
   clear: both;
-  background-color: $black;
 
-  a {
-    display: inline-block;
-    line-height: $pede_pizza_menu-height;
-    color: $white;
-
-    &:hover {
-      text-decoration: none;
-      color: $yellow;
-    }
-  }
-
-  .logo {
-    font-weight: 700;
-  }
-
-  .menu-button {
-    float: right;
-    margin-left: 15px;
-  }
-}
-
-#menu {
-  height: $menu-height;
-  width: 100%;
-  clear: both;
-  background-color: $yellow;
-  color: $black;
-  text-align: center;
-  font-size: 14px;
-
-  a {
+  #pede_pizza_menu {
     position: relative;
-    display: inline-block;
-    height: $menu-height;
-    width: 30%;
-    text-align: center;
-    color: $black;
-    font-weight: 700;
+    height: $pede_pizza_menu-height;
+    width: 100%;
+    clear: both;
+    background-color: $black;
 
-    i {
-      display: block;
-      margin-bottom: 5px;
-      padding-top: 10px;
+    a {
+      display: inline-block;
+      line-height: $pede_pizza_menu-height;
+      color: $white;
+
+      &:hover {
+        text-decoration: none;
+        color: $yellow;
+      }
     }
 
-    &:hover {
-      text-decoration: none;
-      color: $dark-yellow;
+    .logo {
+      font-weight: 700;
     }
 
-    &.selected {
-      color: $dark-yellow;
+    .menu-button {
+      float: right;
+      margin-left: 15px;
     }
   }
+
+  #menu {
+    position: relative;
+    height: $menu-height;
+    width: 100%;
+    clear: both;
+    background-color: $yellow;
+    color: $black;
+    text-align: center;
+    font-size: 14px;
+    -webkit-box-shadow: 0px 5px 25px -2px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 5px 25px -2px rgba(0,0,0,0.75);
+      box-shadow: 0px 5px 25px -2px rgba(0,0,0,0.75);
+
+    a {
+      position: relative;
+      display: inline-block;
+      height: $menu-height;
+      width: 30%;
+      text-align: center;
+      color: $black;
+      font-weight: 700;
+
+      i {
+        display: block;
+        margin-bottom: 5px;
+        padding-top: 10px;
+      }
+
+      &:hover {
+        text-decoration: none;
+        color: $dark-yellow;
+      }
+
+      &.selected {
+        color: $dark-yellow;
+      }
+    }
+  }
+
 }
 
 #footer {

@@ -5,6 +5,8 @@ class EstablishmentsController < ApplicationController
   before_action :show_pede_pizza_menu, if: :user_is_establishment?
   before_action :show_menu, only: [:show]
 
+  layout 'establishment', only: [:show]
+
   # GET /establishments
   # GET /
   def index
