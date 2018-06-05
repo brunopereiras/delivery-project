@@ -1,0 +1,52 @@
+<%
+  padding = 0
+  if @should_show_pede_pizza_menu
+    padding += 40
+  end
+  if @should_show_menu
+    padding += 70
+  end
+%>
+
+<div class="clear" style="height: <%= padding %>px"></div>
+<div id="menus">
+  <% if @should_show_pede_pizza_menu %>
+    <div id="pede_pizza_menu">
+    <div class="container">
+      <%= link_to 'Pede.Pizza', hotsite_index_path, class: 'logo' %>
+
+      <% if current_user %>
+        <%= link_to current_user.first_name, current_user, class: 'menu-button' %>
+      <% else %>
+        <%= link_to 'Login', login_path, class: 'menu-button' %>
+      <% end %>
+
+      <%= link_to 'About', hotsite_about_path, class: 'menu-button' %>
+
+      <div class="clear"></div>
+    </div>
+  </div>
+  <% end %>
+
+  <% if @should_show_menu %>
+    <div id="menu">
+    <div class="container">
+      <a href="#" class="selected">
+        <i class="fas fa-clipboard-list fa-2x"></i>
+        <span>Menu</span>
+      </a>
+
+      <a href="#">
+        <i class="fas fa-file-alt fa-2x"></i>
+        <span>Order</span>
+      </a>
+
+      <% if current_user %>
+        <%= link_to raw('<i class="fas fa-user fa-2x"></i><span>' + current_user.first_name + '</span>'), current_user %>
+      <% else %>
+        <%= link_to raw('<i class="fas fa-user fa-2x"></i><span>Login</span>'), login_path %>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>

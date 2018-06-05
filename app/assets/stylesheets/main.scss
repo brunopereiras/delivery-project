@@ -7,12 +7,12 @@ $pede_pizza_menu-height: 40px;
 
 #menus {
   position: fixed;
+  top: 0;
   z-index: 100;
   width: 100%;
   clear: both;
 
   #pede_pizza_menu {
-    position: relative;
     height: $pede_pizza_menu-height;
     width: 100%;
     clear: both;
@@ -40,7 +40,6 @@ $pede_pizza_menu-height: 40px;
   }
 
   #menu {
-    position: relative;
     height: $menu-height;
     width: 100%;
     clear: both;
