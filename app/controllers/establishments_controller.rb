@@ -7,6 +7,8 @@ class EstablishmentsController < ApplicationController
 
   layout 'establishment', only: [:show]
 
+  include EstablishmentsHelper
+
   # GET /establishments
   # GET /
   def index
@@ -16,6 +18,7 @@ class EstablishmentsController < ApplicationController
   # GET /establishments/1
   # GET /establishments/1.json
   def show
+    @product_categories = @establishment.product_categories.order('created_at DESC')
   end
 
   # GET /establishments/new
@@ -72,6 +75,7 @@ class EstablishmentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_establishment
       @establishment = Establishment.where('id = ? and user_id = ?', params[:id], current_user.id).take
+      save_establishment(@establishment)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

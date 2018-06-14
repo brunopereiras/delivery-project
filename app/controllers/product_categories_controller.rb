@@ -1,5 +1,8 @@
 class ProductCategoriesController < ApplicationController
   before_action :set_product_category, only: [:show, :edit, :update, :destroy]
+  before_action :show_pede_pizza_menu, if: :user_is_establishment?
+
+  include EstablishmentsHelper
 
   # GET /product_categories
   # GET /product_categories.json
@@ -10,6 +13,7 @@ class ProductCategoriesController < ApplicationController
   # GET /product_categories/1
   # GET /product_categories/1.json
   def show
+    redirect_to current_establishment
   end
 
   # GET /product_categories/new
@@ -25,10 +29,11 @@ class ProductCategoriesController < ApplicationController
   # POST /product_categories.json
   def create
     @product_category = ProductCategory.new(product_category_params)
+    @product_category.establishment = current_establishment
 
     respond_to do |format|
       if @product_category.save
-        format.html { redirect_to @product_category, notice: 'Product category was successfully created.' }
+        format.html { redirect_to current_establishment, notice: 'Product category was successfully created.' }
         format.json { render :show, status: :created, location: @product_category }
       else
         format.html { render :new }
@@ -56,7 +61,7 @@ class ProductCategoriesController < ApplicationController
   def destroy
     @product_category.destroy
     respond_to do |format|
-      format.html { redirect_to product_categories_url, notice: 'Product category was successfully destroyed.' }
+      format.html { redirect_to current_establishment, notice: 'Product category was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +74,6 @@ class ProductCategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_category_params
-      params.require(:product_category).permit(:establishment_id, :name)
+      params.require(:product_category).permit(:name)
     end
 end

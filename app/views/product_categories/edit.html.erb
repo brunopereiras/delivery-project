@@ -1,6 +1,6 @@
-<h1>Editing Product Category</h1>
+<h1>Editing Product Category <%= link_to raw('<i class="far fa-trash-alt fa-xs"></i>'), @product_category, method: :delete, data: { confirm: 'Are you sure?' } %></h1>
 
 <%= render 'form', product_category: @product_category %>
 
-<%= link_to 'Show', @product_category %> |
-<%= link_to 'Back', product_categories_path %>
+<%= link_to 'Back', current_establishment %>
+

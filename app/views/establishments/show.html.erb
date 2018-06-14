@@ -1,29 +1,24 @@
 <div id="establishment">
-  <div id="image_header">
+  <div id="header_container" class="container">
+    <div class="container">
+      <div class="logo" style="background-image: url(http://res.cloudinary.com/pedepizza/image/upload/q_auto,f_auto/v1527959814/Pizza%20logos%20example/pizza_mane.png);"></div>
+    </div>
+
+    <div id="image_header">
+      <div class="container">
+        <h1>Lorem ipsum dolor sit amet</h1>
+        <div class="clear"></div>
+        <h3>In nec enim diam. Sed finibus, arcu nec congue euismod, sem dolor posuere massa, ac hendrerit quam sapien nec neque.</h3>
+        <div class="clear"></div>
+      </div>
+    </div>
   </div>
 
   <div class="container">
 
-    <div class="logo" style="background-image: url(http://res.cloudinary.com/pedepizza/image/upload/q_auto,f_auto/v1527959814/Pizza%20logos%20example/pizza_mane.png);"></div>
-
     <p id="notice"><%= notice %></p>
 
-    <p>
-      <strong>User:</strong>
-      <%= @establishment.user.name %>
-    </p>
+    <%= render 'categories', product_categories: @product_categories %>
 
-    <p>
-      <strong>Name:</strong>
-      <%= @establishment.name %>
-    </p>
-
-    <p>
-      <strong>Link name:</strong>
-      <%= @establishment.link_name %>
-    </p>
-
-    <%= link_to 'Edit', edit_establishment_path(@establishment) %> |
-    <%= link_to 'Back', establishments_path %>
   </div>
 </div>

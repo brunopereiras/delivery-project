@@ -1,0 +1,14 @@
+<% if product_categories.count > 0 %>
+  <%= link_to 'New Product Category', new_product_category_path %>
+
+  <% product_categories.each do |product_category| %>
+    <h2>
+      <%= product_category.name %>
+      <%= link_to raw('<i class="fas fa-edit fa-xs"></i>'), edit_product_category_path(product_category) %>
+    </h2>
+
+
+  <% end %>
+<% else %>
+  <p>Você ainda não possui nenhuma categoria de produto. Clique <%= link_to 'aqui', new_product_category_path %> para criar uma nova.</p>
+<% end %>
