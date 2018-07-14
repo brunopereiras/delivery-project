@@ -1,1 +1,31 @@
 @import 'mixins';
+
+#menu {
+
+  h3 {
+    margin: 0;
+  }
+
+  .logo {
+    @media only screen and (max-width: $breakpoint-med) {
+      text-align: center;
+    }
+  }
+
+  .links {
+    text-align: right;
+
+    @media only screen and (max-width: $breakpoint-med) {
+      text-align: center;
+    }
+
+    h3 {
+      display: inline-block;
+      margin-left: 20px;
+
+      &:first-child {
+        margin-left: 0px;
+      }
+    }
+  }
+}
